@@ -26,11 +26,6 @@ def contact():
     #############################################################
 
 
-# @app.get("/api/developer")
-# def developer():
-#     return json.dumps(tools)
-
-
 app.get("/api/developer/address")
 
 

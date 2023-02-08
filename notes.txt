@@ -10,3 +10,30 @@ source venv/bin/activate
 
 
 python -m pip install <package>
+
+
+# FIRST TIME
+
+# initialize a git project
+git init
+
+# add all changes/files
+git add .
+
+# create local copy
+git commit -m "ANY MESSAGE"
+
+# add the remote
+git remote add origin <URL>
+
+# upload changes
+git push -u origin master (or main)
+
+
+
+
+
+# NEXT TIMES
+git add .
+git commit -m "ANY MESSAGE"
+git push
