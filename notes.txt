@@ -1,0 +1,12 @@
+# activate virtual env
+# win:
+venv\Scripts\activate
+
+# mac / linux:
+source venv/bin/activate
+
+# deactivate 
+# install flask
+
+
+python -m pip install <package>
