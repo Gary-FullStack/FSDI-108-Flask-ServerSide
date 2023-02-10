@@ -64,7 +64,7 @@ def prod_by_id(id):
         if prod["_id"] == id:
             return json.dumps(prod)
 
-    return abort(404, "aint got none of that")
+    return abort(404, " we aint got none of that")
 
 
 @app.get("/api/product/search/<text>")
@@ -77,11 +77,17 @@ def search_product(text):
     return json.dumps(results)
 
 
-@app.get("/api/categories")
-def get_categories():
-    results = []
-    for prod in mock_catalog:
-        cat = prod["category"]
+# gave this a try, but it didn't work.
+
+@app.get("/api/categories/<title>")
+def checkKey(dic, key):
+    for key, value in mock_catalog():
+        return key
+    else:
+        return abort(404, " we no longer have any of those items")
+        results.append(key)
+
+    return json.dumps(results)
 
 
 app.run(debug=True)
