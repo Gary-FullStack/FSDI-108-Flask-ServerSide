@@ -56,9 +56,6 @@ def get_catalog():
 def save_catalog():
     data = request.get_json()
     db.products.insert_one(data)
-
-    # print("_" * 25)
-    # print(data)
     fix_id(data)
     return json.dumps(data)
 
@@ -84,10 +81,10 @@ def prod_by_id(id):
     _id = ObjectId(id)
     prod = db.products.find_one({"_id": _id})
     if prod is None:
-        return abort(404, " we aint got none of that")
+        return abort(404, "Invalid Id")
 
-        fix_id(prod)
-        return json.dumps(prod)
+    fix_id(prod)
+    return json.dumps(prod)
 
 
 @app.get("/api/product/search/<text>")
