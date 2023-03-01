@@ -3,9 +3,11 @@ from data import tools, mock_catalog
 from config import db
 from bson import ObjectId
 import json
+from flask_cors import CORS
 
 
 app = Flask(__name__)
+CORS(app)  # bad joo joo
 
 
 @app.get("/")
